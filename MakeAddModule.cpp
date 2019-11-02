@@ -128,9 +128,15 @@ Module* makeAdd(LLVMContext& Context) {
     auto Y1 = args1++;
 
     // Entry1 add(x, y)
-    IRBuilder<> builder(EntryBlock);
+    auto builder = IRBuilder<>{EntryBlock};
 
     // -- Alloc args to stack
+    // debug
+    // debug
+    std::cout << &(Context) << '\n';
+    std::cout << &(X1->getContext()) << '\n';
+    std::cout << std::endl;
+
     auto Stack_X = builder.CreateAlloca(Type::getInt32Ty(Context));
     auto Stack_Y = builder.CreateAlloca(Type::getInt32Ty(Context));
     builder.CreateStore(X1, Stack_X);
