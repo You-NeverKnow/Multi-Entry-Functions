@@ -118,6 +118,8 @@ Module* makeAdd(LLVMContext& Context) {
     auto EntryBlock2 = BasicBlock::CreateMEF(Context, "add2", AddBody);
     auto Y_is_Seven = BasicBlock::CreateMEF(Context, "Y_is_Seven", AddBody);
     auto LastBlock = BasicBlock::CreateMEF(Context, "Last", AddBody);
+    auto UnreachableBlock = BasicBlock::CreateMEF(Context, "Im-Unreachable", AddBody);
+    auto UnreachableBlock2 = BasicBlock::CreateMEF(Context, "Im-UnreachableAlso", AddBody);
     AddEntry1->Register(EntryBlock);
     AddEntry2->Register(EntryBlock2);
 
@@ -210,6 +212,7 @@ void printASM(Module *M) {
     M->setDataLayout(TM->createDataLayout());
     TM->addPassesToEmitFile(PM, (raw_pwrite_stream &) outs(), (raw_pwrite_stream *) (&outs()),
                             TargetMachine::CodeGenFileType::CGFT_AssemblyFile, true, nullptr);
-    PM.run(*M);
+//    PM.run(*M);
+    PM.runMEF(*M);
 }
 
