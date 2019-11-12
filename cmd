@@ -1,0 +1,4 @@
+clang++  MakeAddModule.cpp -I/usr/local/include -D_GNU_SOURCE -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS -D__STDC_LIMIT_MACROS
+-L/usr/local/lib 
+-lLLVMX86Disassembler -lLLVMX86AsmParser -lLLVMX86CodeGen -lLLVMGlobalISel -lLLVMSelectionDAG -lLLVMAsmPrinter -lLLVMDebugInfoDWARF -lLLVMCodeGen -lLLVMTarget -lLLVMScalarOpts -lLLVMInstCombine -lLLVMAggressiveInstCombine -lLLVMTransformUtils -lLLVMBitWriter -lLLVMAnalysis -lLLVMProfileData -lLLVMX86Desc -lLLVMObject -lLLVMMCParser -lLLVMBitReader -lLLVMBitstreamReader -lLLVMMCDisassembler -lLLVMMC -lLLVMDebugInfoCodeView -lLLVMDebugInfoMSF -lLLVMX86Utils -lLLVMX86Info -lLLVMCore -lLLVMRemarks -lLLVMBinaryFormat -lLLVMSupport -lLLVMDemangle
+-lz -lrt -ldl -ltinfo -lpthread -lm -I/home/advait/projects/cpp/llvm-project/llvm/lib/Target/X86 -I/home/advait/projects/cpp/llvm-project/build/lib/Target/X86 -pthread -o addMaker1; ./addMaker1
