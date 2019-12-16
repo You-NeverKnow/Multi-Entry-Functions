@@ -1,7 +1,8 @@
 #include <iostream>
 
-extern "C" int add(int x, int y);
+extern "C" int inc(int x);
 
+__attribute__((thiscall))
 int main() {
-    std::cout << add(10, -1) << std::endl;
+    std::cout << inc(10) << std::endl;
 }
